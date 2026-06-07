@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Your Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#">YourName</a>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button id="menuToggle" class="menu-toggle">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <h1>Hi, I'm <span class="accent">Your Name</span></h1>
+            <p class="roles">I build things — <span id="typed">web apps</span></p>
+            <p class="lead">Product-focused web developer building accessible, performant experiences.</p>
+            <p><a class="btn" href="#projects">See my work</a></p>
+          </div>
+          <div class="hero-right">
+            <div class="avatar" aria-hidden="true">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g" x1="0" x2="1">
+                    <stop offset="0" stop-color="#6EE7B7"/>
+                    <stop offset="1" stop-color="#3B82F6"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="80" r="60" fill="url(#g)" />
+                <rect x="40" y="140" width="120" height="40" rx="10" fill="#111827" opacity="0.06"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container">
+          <h2>About</h2>
+          <p>I'm a developer focusing on front-end and full-stack projects. I care about design, performance, and developer experience.</p>
+
+          <div class="reveal skills">
+            <h3>Skills</h3>
+            <div class="skill-list">
+              <div class="skill" data-level="90">
+                <div class="skill-head"><strong>HTML &amp; CSS</strong><span class="muted">90%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:0%"></div></div>
+              </div>
+              <div class="skill" data-level="85">
+                <div class="skill-head"><strong>JavaScript</strong><span class="muted">85%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:0%"></div></div>
+              </div>
+              <div class="skill" data-level="75">
+                <div class="skill-head"><strong>React / Frameworks</strong><span class="muted">75%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="width:0%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div id="headerBird" class="bird" aria-hidden="true">
+            <svg viewBox="0 0 64 32" width="80" height="40" xmlns="http://www.w3.org/2000/svg" role="img">
+              <g fill="none" stroke="white" stroke-opacity="0.95" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 18c6-6 12-6 18 0 6-6 12-6 18 0" stroke-opacity="0.95" stroke-width="2.4" stroke="#fff" />
+                <path d="M30 12c4-4 8-4 12 0" stroke-opacity="0.85" stroke-width="2" stroke="#fff" />
+              </g>
+            </svg>
+          </div>
+          <div class="reveal about-cards" style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+            <div class="card">I focus on accessible, performant UI.</div>
+            <div class="card">I enjoy designing small, reusable systems.</div>
+            <div class="card">I collaborate with product teams and designers.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="container">
+          <h2>Selected Projects</h2>
+          <div class="projects-controls">
+            <input id="projectSearch" type="search" placeholder="Search projects or tags…" aria-label="Search projects">
+          </div>
+          <div class="projects-layout">
+            <div id="projectsList" class="projects-list" aria-label="Projects list"></div>
+            <div id="projectsDetail" class="projects-detail" aria-live="polite">Select a project to view details.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <div class="contact-grid">
+            <form id="contactForm" class="contact-form" novalidate>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Your name">
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+
+              <div class="form-row">
+                <button id="contactSubmit" class="btn" type="submit">Send message</button>
+                <button id="copyEmail" type="button" class="btn secondary">Copy email</button>
+              </div>
+
+              <div id="contactStatus" class="contact-status" role="status" aria-live="polite"></div>
+            </form>
+
+            <div class="contact-info">
+              <p class="lead">Available for freelance and full-time roles.</p>
+              <p>Email: <a id="primaryEmail" href="mailto:you@example.com">you@example.com</a></p>
+              <p class="socials">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+              </p>
+              <p class="muted">Messages are simulated locally — no server required. Use the form to preview validation and UX.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Project modal (opens on index click) -->
+    <div id="projectModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" data-close aria-label="Close">×</button>
+        <div id="modalInner">Loading…</div>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Your Name — Built with care.</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

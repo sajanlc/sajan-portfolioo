@@ -1,0 +1,49 @@
+{
+  "projects": [
+    {
+      "id": "project-one",
+      "title": "Project One",
+      "short": "Design-forward marketing site to increase trial signups.",
+      "tech": "HTML · CSS · JavaScript",
+      "heroColor": "linear-gradient(135deg,#f97316,#f59e0b)",
+      "image": "assets/placeholder-1.svg",
+      "tags": ["marketing","performance","design"],
+      "content": {
+        "overview": "Project One is a single-page marketing site with animated hero, fast load times, and accessible forms.",
+        "challenge": "Visitors were leaving before reaching signup due to slow images and unclear copy.",
+        "solution": "Progressive image placeholders, simplified copy, and clear CTAs.",
+        "outcome": "Improved trial conversions and Core Web Vitals scores."
+      }
+    },
+    {
+      "id": "project-two",
+      "title": "Project Two",
+      "short": "Multi-tenant dashboard with real-time analytics.",
+      "tech": "React · Node · WebSocket",
+      "heroColor": "linear-gradient(135deg,#7c3aed,#06b6d4)",
+      "image": "assets/placeholder-2.svg",
+      "tags": ["dashboard","realtime","analytics"],
+      "content": {
+        "overview": "A real-time analytics dashboard with streaming updates and client-side optimizations.",
+        "challenge": "Present complex data clearly while maintaining performance.",
+        "solution": "Virtualization, payload minimization, and progressive enhancement.",
+        "outcome": "Lowered client CPU usage and faster time-to-interactive."
+      }
+    },
+    {
+      "id": "project-three",
+      "title": "Project Three",
+      "short": "Composable design system used across multiple products.",
+      "tech": "TypeScript · Storybook",
+      "heroColor": "linear-gradient(135deg,#34d399,#60a5fa)",
+      "image": "assets/placeholder-3.svg",
+      "tags": ["design-system","components","accessibility"],
+      "content": {
+        "overview": "A shared component library with accessibility patterns and CI checks.",
+        "challenge": "Maintain consistency and accessibility across product teams.",
+        "solution": "Semantic components, keyboard support, and documentation.",
+        "outcome": "Faster feature delivery and improved UI consistency."
+      }
+    }
+  ]
+}

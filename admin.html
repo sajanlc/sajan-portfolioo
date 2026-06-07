@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin — Edit Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>body{padding:24px;background:var(--bg)} .admin{max-width:1100px;margin:0 auto;color:#e6eef8}</style>
+  </head>
+  <body>
+    <div id="adminLogin" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.72);z-index:80">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.02),var(--glass));padding:20px;border-radius:12px;min-width:320px;color:inherit">
+        <h2 style="margin-top:0">Admin Login</h2>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <input id="loginUser" placeholder="Username" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <input id="loginPass" placeholder="Password" type="password" style="padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+            <button id="loginBtn" class="btn">Sign in</button>
+          </div>
+        </div>
+        <p style="margin-top:8px;color:var(--muted);font-size:13px">Change credentials in <strong>admin.js</strong> (constants `ADMIN_USER` / `ADMIN_PASS`). This is client-side protection only.</p>
+      </div>
+    </div>
+
+    <div id="adminRoot" class="admin" style="display:none">
+      <h1>Edit Projects (Admin)</h1>
+      <p class="muted">This editor edits the `data/projects.json` content in-browser and allows exporting the updated JSON.</p>
+      <div style="display:flex;gap:12px;margin-top:12px">
+        <button id="reloadData" class="btn">Reload from server</button>
+        <button id="exportJson" class="btn secondary">Export JSON</button>
+        <input id="importFile" type="file" accept="application/json" style="margin-left:8px" />
+      </div>
+
+      <div id="adminList" style="margin-top:18px"></div>
+
+      <h2 style="margin-top:18px">Add new project</h2>
+      <form id="newProjectForm" class="contact-form">
+        <label>Id</label><input name="id" required placeholder="project-four">
+        <label>Title</label><input name="title" required>
+        <label>Short</label><input name="short">
+        <label>Tech</label><input name="tech">
+        <label>Image</label><input name="image" placeholder="assets/placeholder-1.svg">
+        <label>Tags (comma)</label><input name="tags" placeholder="tag1,tag2">
+        <p><button class="btn" type="submit">Add project</button></p>
+      </form>
+    </div>
+    <script src="admin.js"></script>
+  </body>
+</html>
